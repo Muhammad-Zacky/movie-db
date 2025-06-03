@@ -15,6 +15,7 @@
 
     <form action="{{ route('movies.store') }}" method="POST" enctype="multipart/form-data">
       @csrf
+      <a href="/list" class="btn btn-primary mb-3">Data Movie</a>
       <div class="mb-3">
         <label for="title" class="form-label">Judul</label>
         <input type="text" class="form-control" id="title" name="title">
