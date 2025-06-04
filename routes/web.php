@@ -26,9 +26,6 @@ Route::put('/movies/{id}', [MovieController::class, 'update'])->name('movies.upd
 
 Route::delete('/movies/{id}', [MovieController::class, 'destroy'])->name('movies.destroy');
 
-Route::get('/search', [MovieController::class, 'search'])->name('movies.search');
-
-
 // use Illuminate\Support\Facades\Route;
 
 // use App\Http\Controllers\MovieController;
