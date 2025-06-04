@@ -20,11 +20,11 @@ Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
 
 Route::get('/list', [MovieController::class, 'list']);
 
-Route::get('/movies/{id}/edit', [MovieController::class, 'edit'])->name('movies.edit');
+Route::get('/movies/{id}/edit', [MovieController::class, 'edit'])->name('movies.edit')->middleware('auth', RoleAdmin::class);
 
-Route::put('/movies/{id}', [MovieController::class, 'update'])->name('movies.update');
+Route::put('/movies/{id}', [MovieController::class, 'update'])->name('movies.update')->middleware('auth', RoleAdmin::class);
 
-Route::delete('/movies/{id}', [MovieController::class, 'destroy'])->name('movies.destroy');
+Route::delete('/movies/{id}', [MovieController::class, 'destroy'])->name('movies.destroy')->middleware('auth', RoleAdmin::class);
 
 // use Illuminate\Support\Facades\Route;
 

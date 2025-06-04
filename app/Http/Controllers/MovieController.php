@@ -78,9 +78,10 @@ class MovieController extends Controller
 
     public function destroy($id)
     {
+        if (Gate::allows('delete-movie')) {
         $data = Movie::findorfail($id);
         $data->delete();
         return redirect()->back()->with('success', 'data berhasil di hapus');
     }
-
+}
 }

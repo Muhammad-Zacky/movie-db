@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->enum('role',['admin', 'user'])->default('user')->after('password');
-            //
+            $table->enum('role', ['admin', 'user'])->default('user')->after('password');
         });
     }
 
@@ -25,5 +24,6 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('role');
         });
+        abort(403, 'Akses di tolak, hanya admin yang boleh masuk cihuyyy!!!');    
     }
 };
