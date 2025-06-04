@@ -25,10 +25,11 @@
           <li class="nav-item"><a class="nav-link active" href="/movies/create">Add Movie</a></li>
         </ul>
 
-        <form class="d-flex me-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
+      <form class="d-flex me-3" role="search" action="/search" method="GET">
+        <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+
 
         @auth
           <ul class="navbar-nav">
